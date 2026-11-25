@@ -46,3 +46,28 @@ wn2vn/
 ├── requirements.txt               # Pinned dependencies (pydantic, trafilatura, spacy, etc.)
 └── README.md                      # Setup instructions, dataset notes, and pipeline usage
 ```
+
+# Setup Guide
+1. Create and activate a virtual environment
+```
+python3 -m venv .venv
+```
+For Linux/macOS:
+```
+source .venv/bin/activate
+```
+For Windows:
+```
+.venv\Scripts\activate
+```
+
+2. Install dependencies (and any NLP models added later)
+```
+pip install -r requirements.txt
+```
+
+3. Verify
+```
+pytest
+```
+Will report collected 0 items and exit with status code 5 (no tests collected).
