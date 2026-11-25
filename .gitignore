@@ -1,8 +1,12 @@
+*.egg-info/
 .venv/
 __pycache__/
 *.pyc
 .pytest_cache/
 data/raw/*
 data/output/*
+.devcontainer
 !data/raw/.gitkeep
 !data/output/.gitkeep
+dist/
+build/
