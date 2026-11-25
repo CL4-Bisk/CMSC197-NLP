@@ -1,4 +1,8 @@
 .venv/
 __pycache__/
-.ipynb_checkpoints/
-.env
+*.pyc
+.pytest_cache/
+data/raw/*
+data/output/*
+!data/raw/.gitkeep
+!data/output/.gitkeep
