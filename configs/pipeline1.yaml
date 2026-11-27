@@ -1,0 +1,80 @@
+# Pipeline 1 Configuration
+# Load in main.py and pass to each step
+
+preprocess:
+  single_newline_paragraphs: false
+  drop_noise: true
+  extra_noise_patterns: []
+
+classifier:
+  model: "rules"              # "rules" | "bart_zeroshot"
+  confidence_threshold: 0.7
+  device: "auto"
+  batch_size: 16
+
+characters:
+  ner_model: "spacy_sm"       # "spacy_trf" | "spacy_sm" | "flair"
+  coref_model: "fastcoref"    # "fastcoref" | "lingmess"
+  fuzzy_threshold: 85
+  title_prefixes:             # Customize per novel genre
+    - "young master"
+    - "senior brother"
+    - "junior brother"
+    - "senior sister"
+    - "junior sister"
+    - "sect master"
+    - "patriarch"
+    - "matriarch"
+    - "daoist master"
+    - "senior"
+    - "elder"
+    - "master"
+    - "lord"
+    - "lady"
+    - "prince"
+    - "princess"
+    - "emperor"
+    - "empress"
+    - "general"
+    - "commander"
+    - "ancestor"
+    - "daoist"
+    - "venerable"
+    - "reverend"
+    - "sage"
+    - "immortal"
+    - "cultivator"
+    - "brother"
+    - "sister"
+    - "uncle"
+    - "aunt"
+    - "grandfather"
+    - "grandmother"
+    - "father"
+    - "mother"
+    - "son"
+    - "daughter"
+    - "cousin"
+    - "mr"
+    - "mrs"
+    - "ms"
+    - "dr"
+    - "prof"
+    - "sir"
+    - "madam"
+  attribution_window: 3
+  use_alternation: true
+
+emotions:
+  model: "nrc"                # "nrc" | "distilroberta" | "go_emotions"
+  return_spans: true
+
+segmenter:
+  method: "embedding"         # "texttiling" | "embedding" | "hybrid"
+  window_size: 10
+  threshold: 0.5
+  use_weak_labels: true       # Use *** breaks from preprocess as weak supervision
+
+exporter:
+  format: "json"              # "json" | "renpy" (renpy optional)
+  output_dir: "data/output"
