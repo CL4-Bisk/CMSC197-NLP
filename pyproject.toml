@@ -1,3 +1,6 @@
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (requires spaCy models and/or sentence-transformers)",
+]
