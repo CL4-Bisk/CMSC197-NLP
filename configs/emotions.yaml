@@ -1,0 +1,37 @@
+# Canonical emotion labels used across Pipeline 1, Pipeline 2, and Evaluation
+canonical_emotions:
+  - neutral
+  - joy
+  - sadness
+  - anger
+  - fear
+  - surprise
+  - disgust
+
+# Maps Ren'Py sprite expression tags (Pipeline 2) to canonical emotions
+renpy_expression_map:
+  normal: neutral
+  default: neutral
+  calm: neutral
+  smile: joy
+  happy: joy
+  laugh: joy
+  grin: joy
+  blush: joy
+  sad: sadness
+  cry: sadness
+  tears: sadness
+  frown: sadness
+  angry: anger
+  mad: anger
+  annoyed: anger
+  pout: anger
+  scared: fear
+  afraid: fear
+  nervous: fear
+  sweat: fear
+  surprised: surprise
+  shocked: surprise
+  gasp: surprise
+  disgusted: disgust
+  gross: disgust
